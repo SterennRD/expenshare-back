@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Expense;
+use App\Entity\Person;
+use App\Entity\ShareGroup;
 use App\Form\ExpenseType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,13 +17,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class ExpenseController extends BaseController
 {
     /**
-     * @Route("/", name="expense_index", methods="GET")
+     * @Route("/{slug}", name="expense_index", methods="GET")
      */
-    public function index(Request $request): Response
+    public function index(ShareGroup $group, Request $request): Response
     {
         $expenses = $this->getDoctrine()
             ->getRepository(Expense::class)
-            ->findAll();
+            ->createQueryBuilder('e')
+            ->select('p', 'e', 's', 'c')
+            ->leftJoin('e.person', 'p')
+            ->leftJoin('e.category', 'c')
+            ->join('p.shareGroup', 's')
+            ->where('s.id = :group')
+            ->setParameter('group', $group)
+            ->getQuery()
+            ->getArrayResult();
+
 
         if ($request->isXmlHttpRequest()) {
             return $this->json($expenses);
@@ -29,6 +40,33 @@ class ExpenseController extends BaseController
 
         }
     }
+
+    /**
+     * @Route("/liste/{slug}", name="expense_liste", methods="GET")
+     */
+    public function liste(ShareGroup $group, Request $request): Response
+    {
+        $expenses = $this->getDoctrine()
+            ->getRepository(Expense::class)
+            ->createQueryBuilder('e')
+            ->select('p', 'e', 's', 'c', 'SUM(e.amount) AS somme')
+            ->leftJoin('e.person', 'p')
+            ->leftJoin('e.category', 'c')
+            ->join('p.shareGroup', 's')
+            ->where('s.id = :group')
+            ->groupBy('p.id')
+            ->setParameter('group', $group)
+            ->getQuery()
+            ->getArrayResult();
+
+
+        if ($request->isXmlHttpRequest()) {
+            return $this->json($expenses);
+        } else {
+
+        }
+    }
+
 
     /**
      * @Route("/new", name="expense_new", methods="GET|POST")

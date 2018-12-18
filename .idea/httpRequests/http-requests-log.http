@@ -1,97 +1,450 @@
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/sharegroup/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T010023.200.json
+<> 2018-12-18T095312.200.json
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/expense/liste/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T125858.200.html
+<> 2018-12-17T031931.200.json
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T112709.404.html
+<> 2018-12-17T031432.200.json
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T112608.404.html
+<> 2018-12-17T031312.200.json
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T111049.404.html
+<> 2018-12-17T031118.200.json
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T111030.404.html
+<> 2018-12-17T011615.500.html
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T110934.404.html
+<> 2018-12-17T011551.500.html
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T110729.404.html
+<> 2018-12-17T011147.500.html
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T110641.404.html
+<> 2018-12-17T010959.200.json
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T110542.404.html
+<> 2018-12-17T010711.500.html
 
 ###
 
-GET http://localhost/dcdev/php/expenshare/public/expense/
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
 Accept: */*
 Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
 
-<> 2018-12-14T110534.404.html
+<> 2018-12-17T010441.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T010419.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T010333.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T010200.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T010137.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T010118.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T010030.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T125534.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T125526.200.json
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T125116.200.json
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T123943.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T123419.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T123234.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T123212.200.json
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T115556.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T115307.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T115251.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T115234.200.json
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T115209.200.json
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T115153.404.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T115108.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114957.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114927.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114826.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114715.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114619.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/person/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114543.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114432.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114333.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T114039.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113956.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113822.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113744.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113657.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113633.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113521.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/share/group/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113458.500.html
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense/mon-super-groupe
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113221.200.json
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113126.200.json
+
+###
+
+GET http://localhost/dcdev/php/expenshare/public/expense
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-17T113036.200.json
 
 ###
 

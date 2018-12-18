@@ -1,0 +1,27 @@
+[
+  [
+    {
+      "id": "1",
+      "title": "Avion",
+      "amount": "250.00",
+      "createdAt": "2018-12-14T00:00:00+00:00",
+      "person": {
+        "id": "1",
+        "firstname": "Sterenn",
+        "lastname": "Reesse",
+        "shareGroup": {
+          "id": "1",
+          "slug": "mon-super-groupe",
+          "createdAt": "2018-12-14T00:00:00+00:00",
+          "closed": false
+        }
+      },
+      "category": {
+        "id": "1",
+        "label": "Voiture",
+        "icon": "fa-car"
+      }
+    },
+    "452.39"
+  ]
+]

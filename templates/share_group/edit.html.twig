@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ShareGroup{% endblock %}
+
+{% block body %}
+    <h1>Edit ShareGroup</h1>
+
+    {{ include('share_group/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('share_group_index') }}">back to list</a>
+
+    {{ include('share_group/_delete_form.html.twig') }}
+{% endblock %}

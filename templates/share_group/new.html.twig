@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ShareGroup{% endblock %}
+
+{% block body %}
+    <h1>Create new ShareGroup</h1>
+
+    {{ include('share_group/_form.html.twig') }}
+
+    <a href="{{ path('share_group_index') }}">back to list</a>
+{% endblock %}

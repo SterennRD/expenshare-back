@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ShareGroup{% endblock %}
+
+{% block body %}
+    <h1>ShareGroup</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ share_group.id }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ share_group.slug }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ share_group.createdAt ? share_group.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Closed</th>
+                <td>{{ share_group.closed ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('share_group_index') }}">back to list</a>
+
+    <a href="{{ path('share_group_edit', {'id': share_group.id}) }}">edit</a>
+
+    {{ include('share_group/_delete_form.html.twig') }}
+{% endblock %}

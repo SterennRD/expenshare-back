@@ -1,0 +1,46 @@
+[
+  {
+    "id": "1",
+    "title": "Avion",
+    "amount": "250.00",
+    "createdAt": "2018-12-14T00:00:00+00:00",
+    "person": {
+      "id": "1",
+      "firstname": "Sterenn",
+      "lastname": "Reesse"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Lorem Ipsum",
+    "amount": "34.00",
+    "createdAt": "2018-10-23T00:00:00+00:00",
+    "person": {
+      "id": "3",
+      "firstname": "Michael",
+      "lastname": "Jackson"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Argent pour les abonnés",
+    "amount": "123.00",
+    "createdAt": "2018-02-10T00:00:00+00:00",
+    "person": {
+      "id": "4",
+      "firstname": "Pierre",
+      "lastname": "Jehan"
+    }
+  },
+  {
+    "id": "4",
+    "title": "Machin cher",
+    "amount": "2356.56",
+    "createdAt": "2018-12-12T00:00:00+00:00",
+    "person": {
+      "id": "6",
+      "firstname": "Eddie",
+      "lastname": "Murphy"
+    }
+  }
+]
