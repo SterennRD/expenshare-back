@@ -55,9 +55,9 @@ class Expense
     /**
      * @var Person
      *
-     * @ORM\ManyToOne(targetEntity="Person", inversedBy="Person")
+     * @ORM\ManyToOne(targetEntity="Person", inversedBy="expenses")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="person_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="person_id", referencedColumnName="id", onDelete="CASCADE")
      * })
      */
     private $person;

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "firstname": "Sterenn",
+    "lastname": "Reesse",
+    "shareGroup": {
+      "id": "1",
+      "slug": "mon-super-groupe",
+      "createdAt": "2018-12-14T00:00:00+00:00",
+      "closed": false
+    }
+  },
+  {
+    "id": "2",
+    "firstname": "Julia",
+    "lastname": "Vader",
+    "shareGroup": {
+      "id": "1",
+      "slug": "mon-super-groupe",
+      "createdAt": "2018-12-14T00:00:00+00:00",
+      "closed": false
+    }
+  },
+  {
+    "id": "3",
+    "firstname": "Michael",
+    "lastname": "Jackson",
+    "shareGroup": {
+      "id": "1",
+      "slug": "mon-super-groupe",
+      "createdAt": "2018-12-14T00:00:00+00:00",
+      "closed": false
+    }
+  },
+  {
+    "id": "4",
+    "firstname": "Pierre",
+    "lastname": "Jehan",
+    "shareGroup": {
+      "id": "1",
+      "slug": "mon-super-groupe",
+      "createdAt": "2018-12-14T00:00:00+00:00",
+      "closed": false
+    }
+  },
+  {
+    "id": "5",
+    "firstname": "Robert",
+    "lastname": "De Niro",
+    "shareGroup": {
+      "id": "1",
+      "slug": "mon-super-groupe",
+      "createdAt": "2018-12-14T00:00:00+00:00",
+      "closed": false
+    }
+  }
+]

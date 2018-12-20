@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 
 /**
  * Person
@@ -45,6 +48,13 @@ class Person
      */
     private $shareGroup;
 
+    /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="Expense", mappedBy="person")
+     */
+    private $expenses;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -84,6 +94,20 @@ class Person
         $this->shareGroup = $shareGroup;
 
         return $this;
+    }
+    /**
+     * @return Collection
+     */
+    public function getExpenses(): ?Collection
+    {
+        return $this->expenses;
+    }
+    /**
+     * @param Collection $expenses
+     */
+    public function setExpenses(Collection $expenses): void
+    {
+        $this->expenses = $expenses;
     }
 
 

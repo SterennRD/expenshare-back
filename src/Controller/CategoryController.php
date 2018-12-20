@@ -2,18 +2,25 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CategoryController extends AbstractController
+/**
+ * @Route("/category")
+ */
+class CategoryController extends BaseController
 {
     /**
-     * @Route("/category", name="category")
+     * @Route("/", name="category_list", methods="GET")
      */
     public function index()
     {
-        return $this->render('category/index.html.twig', [
-            'controller_name' => 'CategoryController',
-        ]);
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)->findAll();
+        return $this->json($categories);
     }
+
+
 }

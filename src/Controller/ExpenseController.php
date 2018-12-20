@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Expense;
 use App\Entity\Person;
 use App\Entity\ShareGroup;
@@ -10,6 +11,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @Route("/expense")
@@ -49,7 +53,7 @@ class ExpenseController extends BaseController
         $expenses = $this->getDoctrine()
             ->getRepository(Expense::class)
             ->createQueryBuilder('e')
-            ->select('p', 'e', 's', 'c', 'SUM(e.amount) AS somme')
+            ->select('p', 'e', 's', 'c', 'SUM(e.amount) AS somme', 'COUNT(p.id) as nb_paie')
             ->leftJoin('e.person', 'p')
             ->leftJoin('e.category', 'c')
             ->join('p.shareGroup', 's')
@@ -69,26 +73,29 @@ class ExpenseController extends BaseController
 
 
     /**
-     * @Route("/new", name="expense_new", methods="GET|POST")
+     * @Route("/", name="expense_new", methods="POST")
      */
-    public function new(Request $request): Response
+    public function new(Request $request)
     {
+        $data = $request->getContent();
+
+        $jsonData = json_decode($data, true);
+        $cat = $this->getDoctrine()->getRepository(Category::class)->find($jsonData["category"]);
+        $person = $this->getDoctrine()->getRepository(Person::class)->find($jsonData["person"]);
+
+        $em = $this->getDoctrine()->getManager();
+
         $expense = new Expense();
-        $form = $this->createForm(ExpenseType::class, $expense);
-        $form->handleRequest($request);
+        $expense->setCreatedAt(new \DateTime());
+        $expense->setCategory($cat);
+        $expense->setTitle($jsonData["title"]);
+        $expense->setAmount($jsonData["amount"]);
+        $expense->setPerson($person);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($expense);
-            $em->flush();
+        $em->persist($expense);
+        $em->flush();
 
-            return $this->redirectToRoute('expense_index');
-        }
-
-        return $this->render('expense/new.html.twig', [
-            'expense' => $expense,
-            'form' => $form->createView(),
-        ]);
+        return $this->json($this->serialize($expense));
     }
 
     /**
@@ -104,32 +111,45 @@ class ExpenseController extends BaseController
      */
     public function edit(Request $request, Expense $expense): Response
     {
-        $form = $this->createForm(ExpenseType::class, $expense);
-        $form->handleRequest($request);
+        $data = $request->getContent();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+        $jsonData = json_decode($data, true);
+        $expense = $this->getDoctrine()->getRepository(Expense::class)->find($expense);
+        $cat = $this->getDoctrine()->getRepository(Category::class)->find($jsonData["category"]);
+        $person = $this->getDoctrine()->getRepository(Person::class)->find($jsonData["person"]);
 
-            return $this->redirectToRoute('expense_index', ['id' => $expense->getId()]);
-        }
+        $em = $this->getDoctrine()->getManager();
 
-        return $this->render('expense/edit.html.twig', [
-            'expense' => $expense,
-            'form' => $form->createView(),
-        ]);
+        $expense->setCategory($cat);
+        $expense->setTitle($jsonData["title"]);
+        $expense->setAmount($jsonData["amount"]);
+        $expense->setPerson($person);
+
+        $em->persist($expense);
+        $em->flush();
+
+        $expenses = $this->getDoctrine()
+            ->getRepository(Expense::class)->findAll();
+
+        return $this->json($this->serialize($expenses));
     }
 
     /**
-     * @Route("/{id}", name="expense_delete", methods="DELETE")
+     * @Route("/", name="expense_delete", methods="DELETE")
      */
-    public function delete(Request $request, Expense $expense): Response
+    public function delete(Request $request): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$expense->getId(), $request->request->get('_token'))) {
+
+        $data = $request->getContent();
+
+        $jsonData = json_decode($data, true);
+        $expense = $this->getDoctrine()->getRepository(Expense::class)->find($jsonData["id"]);
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($expense);
             $em->flush();
-        }
 
-        return $this->redirectToRoute('expense_index');
+
+        return $this->json($this->serialize($expense));
     }
 }

@@ -21,6 +21,9 @@ class BaseController extends AbstractController
             return $innerObject instanceof \DateTime ? $innerObject->format(\DateTime::ISO8601) : '';
         };
         $getSetNormalizer->setCallbacks(['createdAt' => $callback]);
+        $getSetNormalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
 
         $normalizers = array($getSetNormalizer);
 

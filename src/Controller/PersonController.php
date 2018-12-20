@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Person;
 use App\Entity\ShareGroup;
 use App\Form\PersonType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/person")
  */
-class PersonController extends AbstractController
+class PersonController extends BaseController
 {
     /**
      * @Route("/{slug}", name="person_index", methods="GET")
@@ -30,29 +29,49 @@ class PersonController extends AbstractController
             ->getQuery()
             ->getArrayResult();
 
-
-        if ($request->isXmlHttpRequest()) {
             return $this->json($people);
-        } else {
-
-        }
+    }
+    /**
+     * @Route("/group/{slug}", name="person", methods="GET")
+     */
+    public function index2(ShareGroup $shareGroup)
+    {
+        $persons = $this->getDoctrine()->getRepository(Person::class)
+            ->createQueryBuilder('p')
+            ->select('p', 'e')
+            ->leftJoin('p.expenses', 'e')
+            ->where('p.shareGroup = :group')
+            ->orderBy('e.amount', 'DESC')
+            ->setParameter(':group', $shareGroup)
+            ->getQuery()
+            ->getArrayResult()
+        ;
+        return $this->json($persons);
     }
 
     /**
-     * @Route("/new", name="person_new", methods="GET|POST")
+     * @Route("/", name="person_new", methods="POST")
      */
-    public function new(Request $request): Response
+    public function new(Request $request)
     {
-        if ($request->isXmlHttpRequest()) {
-            $person = new Person();
-            $em = $this->getDoctrine()->getManager();
-            $person->setFirstname($request->get('firstname'));
-            $person->setShareGroup($request->get('sharegroup'));
-            $person->setLastname($request->get('firstname'));
-            $em->persist($person);
-            $em->flush();
-            return $this->json($person);
-        }
+        $data = $request->getContent();
+
+        $jsonData = json_decode($data, true);
+        $groupe = $this->getDoctrine()->getRepository(ShareGroup::class)->find($jsonData["sharegroup"]);
+
+        $em = $this->getDoctrine()->getManager();
+
+        $person = new Person();
+        $person->setFirstname($jsonData["firstname"]);
+        $person->setLastname($jsonData["lastname"]);
+        $person->setShareGroup($groupe);
+
+        $em->persist($person);
+        $em->flush();
+
+
+
+        return $this->json($this->serialize($person));
     }
 
     /**
@@ -84,16 +103,21 @@ class PersonController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="person_delete", methods="DELETE")
+     * @Route("/", name="person_delete", methods="DELETE")
      */
-    public function delete(Request $request, Person $person): Response
+    public function delete(Request $request): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$person->getId(), $request->request->get('_token'))) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($person);
-            $em->flush();
-        }
+        $data = $request->getContent();
 
-        return $this->redirectToRoute('person_index');
+        $jsonData = json_decode($data, true);
+        $person = $this->getDoctrine()->getRepository(Person::class)->find($jsonData["id"]);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($person);
+        $em->flush();
+
+
+
+        return $this->json($this->serialize($person));
     }
 }
